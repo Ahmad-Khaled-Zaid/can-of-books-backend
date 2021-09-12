@@ -20,6 +20,7 @@ const seedBook = () => {
     })
 
     secondBook.save();
+
     const thirdbook = new booksModel({
 
         title: 'book',
@@ -27,6 +28,7 @@ const seedBook = () => {
         status: 'true',
         email: 'ahmadk.zaid97@gmail.com'
     })
+    thirdbook.save();
 
 
 
