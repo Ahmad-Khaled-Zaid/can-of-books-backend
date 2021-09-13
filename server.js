@@ -6,6 +6,7 @@ const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
 app.use(cors());
+app.use(express.json())
 
 
 const PORT = process.env.PORT || 4321;
@@ -17,13 +18,13 @@ mongoose.connect(`${MONGO_URL}/${DB_NAME}`);
 
 const getIndex = require('./controllers/index.controller')
 app.get('/', getIndex)
-const {getbooks}=require('./controllers/books.controller')
-app.get('/booksCollection',getbooks)
-// app.get('/getbooks',getbooks)
+const { getbooks, createBook} = require('./controllers/books.controller')
+app.get('/booksCollection', getbooks)
+app.post('/booksCollection', createBook)
 
-const seeed= require('./helper/bookSeeds.seeds')
-seeed();    
+const seeed = require('./helper/bookSeeds.seeds')
+seeed();
 
-app.listen(PORT, () =>{
+app.listen(PORT, () => {
     console.log(`Server Started on port ${PORT}`);
 })
