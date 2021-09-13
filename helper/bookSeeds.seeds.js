@@ -7,7 +7,7 @@ const seedBook = () => {
         description: 'test the model',
         status: 'true',
         email: 'ahmadk.zaid97@gmail.com'
-    })
+    });
     firstbook.save();
     console.log('Data saved');
 
