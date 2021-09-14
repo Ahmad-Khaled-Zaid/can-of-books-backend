@@ -17,10 +17,11 @@ mongoose.connect(`${MONGO_URL}/${DB_NAME}`);
 
 const getIndex = require('./controllers/index.controller')
 app.get('/', getIndex)
-const { getbooks, createBook,deleteBook} = require('./controllers/books.controller')
+const { getbooks, createBook,deleteBook,updateBook} = require('./controllers/books.controller')
 app.get('/booksCollection', getbooks)
 app.post('/booksCollection', createBook)
 app.delete('/booksCollection/:id', deleteBook); 
+app.put("/booksCollection/:book_id", updateBook);
 
 const seeed = require('./helper/bookSeeds.seeds')
 seeed();
