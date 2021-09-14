@@ -41,8 +41,7 @@ const deleteBook = (request, response) => {
         response.json(updatedBookData);
       }
     );
-  };
-  
+  };  
   
    
 

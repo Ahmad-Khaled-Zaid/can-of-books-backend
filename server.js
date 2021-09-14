@@ -21,7 +21,8 @@ const { getbooks, createBook,deleteBook,updateBook} = require('./controllers/boo
 app.get('/booksCollection', getbooks)
 app.post('/booksCollection', createBook)
 app.delete('/booksCollection/:id', deleteBook); 
-app.put("/booksCollection/:book_id", updateBook);
+app.put("/booksCollection/:id", updateBook);
+
 
 const seeed = require('./helper/bookSeeds.seeds')
 seeed();
