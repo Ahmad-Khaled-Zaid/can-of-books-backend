@@ -5,9 +5,7 @@ const bookModel = require('../models/Book.model')
 
 const getbooks = (request, response) => {
     bookModel.find((error, booksData) => {
-        if (error) {
-            response.send(error)
-        }
+       
         response.json(booksData)
     })
 };
@@ -20,10 +18,22 @@ const createBook = (request, response) => {
     newBook.save();
     response.json(newBook)
 }
+
+const deleteBook = (request, response) => {
+    const bookId = request.params.id;
+    const email=request.query.email;
+  
+    bookModel.deleteOne({ _id: bookId  }, (error, deletedData) => {
+  
+      response.json(deletedData);
+    });
+  
+  }
+  
    
 
 module.exports = {
     getbooks,
-    createBook
+    createBook,
+    deleteBook
 }
-//  console.log(request.body);
