@@ -12,7 +12,7 @@ const getbooks = (request, response) => {
 const createBook = (request, response) => {
 
     const { title, description, status, email } = request.body;
-    const newBook=new booksModel({
+    const newBook=new bookModel({
         title, description, status, email 
     });
     newBook.save();
