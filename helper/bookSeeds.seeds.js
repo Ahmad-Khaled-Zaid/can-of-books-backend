@@ -29,6 +29,23 @@ const seedBook = () => {
         email: 'Miguel de Cervantes@gmail.com'
     })
     thirdbook.save();
+    const forthbook = new booksModel({
+
+        title: 'Don Quixote by Miguel de Cervantes1',
+        description: 'Alonso Quixano, a retired country gentleman in his fifties, lives in an unnamed section of La Mancha with his niece and a housekeeper. He has become obsessed with books of chivalry, and believes th...1',
+        status: 'New1',
+        email: 'Miguel de Cervantes@gmail.com1'
+    })
+    forthbook.save();
+
+    const fifthbook = new booksModel({
+
+        title: 'Don Quixote by Miguel de Cervantes11',
+        description: 'Alonso Quixano, a retired country gentleman in his fifties, lives in an unnamed section of La Mancha with his niece and a housekeeper. He has become obsessed with books of chivalry, and believes th...11',
+        status: 'New11',
+        email: 'Miguel de Cervantes@gmail.com11'
+    })
+    fifthbook.save();
 
 
 
