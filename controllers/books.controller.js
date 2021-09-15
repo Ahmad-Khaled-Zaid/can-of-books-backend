@@ -1,13 +1,11 @@
 'use strict';
-const { request, response } = require('express');
+// const { request, response } = require('express');
 const bookModel = require('../models/Book.model')
-// const { response, request } = require('express')
 
 const getbooks = (request, response) => {
-    bookModel.find((error, booksData) => {
-       
-        response.json(booksData)
-    })
+  bookModel.find({email: request.query.email},(error, booksData) => {
+    response.json(booksData);
+  });
 };
 const createBook = (request, response) => {
 

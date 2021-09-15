@@ -10,10 +10,11 @@ app.use(express.json());
 
 const PORT = process.env.PORT || 4321;
 const MONGO_URL = process.env.MONGO_URL;
-const DB_NAME = process.env.DB_NAME;
-const url = 'mongodb://127.0.0.1:27017/'
+// const DB_NAME = process.env.DB_NAME;
+// const url = 'mongodb://127.0.0.1:27017/'
 
-mongoose.connect(`${MONGO_URL}/${DB_NAME}`);
+// mongoose.connect(`${MONGO_URL}/${DB_NAME}`);
+mongoose.connect(MONGO_URL);
 
 const getIndex = require('./controllers/index.controller')
 app.get('/', getIndex)
